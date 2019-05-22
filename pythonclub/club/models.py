@@ -11,11 +11,11 @@ class Meeting(models.Model):
     meetinglocation=models.CharField(max_lengtoh=255)
     meetingagenda=models.CharField(max_length=255, null=True, blank=True)
 
-def __str__(self):
-    return self.meetingtitle
+    def __str__(self):
+        return self.meetingtitle
 
-class Meta:
-    db_table='meeting'
+    class Meta:
+        db_table='meeting'
 
 class MeetingMinutes(models.Model):
     meetingminutesname=models.CharField(max_length=255)
@@ -24,11 +24,11 @@ class MeetingMinutes(models.Model):
     user=models.ForeignKey(User, on_delete=models.DO_NOTHING)
     meetingtext=models.CharField(max_length=255)
 
-def __str__(self):
-    return self.meetingminutesname
+    def __str__(self):
+        return self.meetingminutesname
 
-class Meta:
-    db_table='meetingminutes'
+    class Meta:
+        db_table='meetingminutes'
 
 class Resource(models.Model):
     resourcename=models.CharField(max_length=255)
